@@ -13,9 +13,9 @@ terraform {
 
 
 provider "google" {
-  project = "my-POCs"
-  region  = "us-west4"
-  zone    = "us-west4-a"
+  project = var.project_id
+  region  = var.region
+  zone    = var.zone
 }
 
 
