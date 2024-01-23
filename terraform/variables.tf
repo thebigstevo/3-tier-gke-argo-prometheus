@@ -1,5 +1,5 @@
 variable "project_id" {
-  default = "my-POCs"
+  default = "utilitarian-arc-405222"
 }
 
 variable "region" {
