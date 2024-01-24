@@ -2,7 +2,7 @@ resource "google_compute_network" "vpc_network" {
   project                 = var.project_id
   auto_create_subnetworks = false
   routing_mode            = "REGIONAL"
-  name                    = "3-tier-VPC"
+  name                    = "three-tier-VPC"
 }
 
 resource "google_compute_subnetwork" "k8s-subnet" {
