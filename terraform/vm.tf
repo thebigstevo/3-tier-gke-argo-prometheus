@@ -1,4 +1,4 @@
-resource "google_compute_instance" "name" {
+resource "google_compute_instance" "jenkins_server" {
   name = "jenkins-server"
   machine_type = "e2-micro"
   zone = var.zone
@@ -8,7 +8,7 @@ resource "google_compute_instance" "name" {
     }
   }
   network_interface {
-    network = google_compute_network.vpc_network.name
+    network = google_compute_network.vpc_network.id
     access_config {
     }
   }
