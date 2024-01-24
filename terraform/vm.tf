@@ -1,6 +1,7 @@
 resource "google_compute_instance" "jenkins_server" {
   name = "jenkins-server"
   machine_type = "e2-micro"
+  tags = ["name", "jenkins-server"]
   zone = var.zone
   boot_disk {
     initialize_params {
@@ -13,4 +14,17 @@ resource "google_compute_instance" "jenkins_server" {
     access_config {
     }
   }
+  metadata_startup_script = "./startup.sh"
+}
+
+#allow firewal rule of 22 to the vm
+resource "google_compute_firewall" "jenkins_firewall" {
+  name = "jenkins-firewall"
+  network = google_compute_network.vpc_network.id
+  allow {
+    protocol = "tcp"
+    ports = ["22"]
+  }
+  source_ranges = ["0.0.0.0/0"]
+  target_tags = ["jenkins-server"]
 }
