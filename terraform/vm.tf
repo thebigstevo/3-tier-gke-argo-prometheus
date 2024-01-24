@@ -6,7 +6,7 @@ resource "google_compute_instance" "jenkins_server" {
   boot_disk {
     initialize_params {
       # image = "debian-cloud/debian-11"
-      image= "ubuntu-pro-2204-jammy-arm64-v20240119a"
+      image= "ubuntu-os-cloud/ubuntu-pro-2204-jammy-arm64-v20240119a"
       size = 20
     }
   }
