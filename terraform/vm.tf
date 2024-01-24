@@ -9,6 +9,7 @@ resource "google_compute_instance" "jenkins_server" {
   }
   network_interface {
     network = google_compute_network.vpc_network.id
+    subnetwork = google_compute_subnetwork.jenkins_subnet.name
     access_config {
     }
   }
