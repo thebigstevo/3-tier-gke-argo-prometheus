@@ -1,3 +1,3 @@
 module "jenkins_server" {
-  source = "./modules/jenkins-server"
+  source = "./modules/jenkins_server_tf"
 }
