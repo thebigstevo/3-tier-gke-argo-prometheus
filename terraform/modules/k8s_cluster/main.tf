@@ -12,7 +12,7 @@ resource "google_container_cluster" "primary" {
 #separately managed node pool
 resource "google_container_node_pool" "primary_nodes" {
   name       = "my-node-pool"
-  location   = "us-west4a"
+  location   = "us-west4"
   cluster    = google_container_cluster.primary.name
   node_count = 2
 
