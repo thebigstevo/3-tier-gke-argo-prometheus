@@ -14,9 +14,9 @@ resource "helm_release" "argocd" {
   chart      = "argocd"
   version    = "5.53.9"
 
-  values = [
-    "${file("values.yaml")}"
-  ]
+#   values = [
+#     "${file("values.yaml")}"
+#   ]
 
   set {
     name  = "service.type"
