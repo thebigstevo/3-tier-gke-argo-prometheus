@@ -7,4 +7,11 @@ output "k8s_cluster_version" {
   value = module.k8s_cluster.master_version
 }
 
-# Include other outputs as needed
+output "k8s_cluster_endpoint" {
+  value = module.k8s_cluster.endpoint
+}
+output "k8s_cluster_ca_certificate" {
+
+  value = module.k8s_cluster.ca_certificate
+}
+
