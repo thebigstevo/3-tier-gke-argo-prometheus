@@ -22,7 +22,7 @@ provider "helm" {
   kubernetes {
     host                   = "https://${module.k8s_cluster.endpoint}"
     token                  = data.google_client_config.default.access_token
-    cluster_ca_certificate = base64decode(module.k8s_cluster.cluster_ca_certificate)
+    cluster_ca_certificate = module.k8s_cluster.cluster_ca_certificate
   
   }
 }
