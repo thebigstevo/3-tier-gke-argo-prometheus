@@ -15,9 +15,7 @@ data "local_file" "argo_namespace_manifest" {
 resource "kubectl_manifest" "argo_namespace" {
   yaml_body = data.local_file.argo_namespace_manifest.content
 }
-resource "kubectl_manifest" "argo_namespace" {
-  yaml_body = file("argo_namespace.yaml")
-}
+
 # resource "helm_release" "argocd" {
 #   name       = "my-redis-release"
 #   repository = "https://argoproj.github.io/argo-helm"
