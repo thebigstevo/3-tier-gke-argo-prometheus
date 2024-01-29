@@ -6,5 +6,3 @@ resource "helm_release" "nginx" {
   chart      = "nginx"
 }
 
-data "google_client_config" "default" {
-}
