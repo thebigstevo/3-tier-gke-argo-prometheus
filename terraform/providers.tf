@@ -28,7 +28,7 @@ provider "helm" {
 }
 
 resource "helm_release" "nginx" {
-  depends_on = [google_container_node_pool.node_pool]
+  depends_on = [module.k8s_cluster]
 
   repository = "https://charts.bitnami.com/bitnami"
   name       = "nginx"
