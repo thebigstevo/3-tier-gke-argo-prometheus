@@ -7,7 +7,9 @@ resource "kubernetes_namespace" "argocd" {
   }
 }
 
-
+resource "kubectl_manifest" "argo_namespace" {
+  yaml_body = file("argo_namespace.yaml")
+}
 # resource "helm_release" "argocd" {
 #   name       = "my-redis-release"
 #   repository = "https://argoproj.github.io/argo-helm"
