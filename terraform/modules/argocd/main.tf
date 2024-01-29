@@ -14,6 +14,7 @@ resource "helm_release" "argocd" {
   chart      = "argo-cd"
   namespace  = "argocd"
   version    = "5.24.1"
+  depends_on = [ kubernetes_namespace.argocd ]
 
 #   values = [
 #     "${file("values.yaml")}"
