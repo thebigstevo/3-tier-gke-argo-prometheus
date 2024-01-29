@@ -9,6 +9,7 @@ output "k8s_cluster_version" {
 
 output "k8s_cluster_endpoint" {
   value = module.k8s_cluster.endpoint
+  sensitive = true
 }
 output "k8s_cluster_ca_certificate" {
 
