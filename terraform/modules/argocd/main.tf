@@ -10,7 +10,7 @@ resource "kubernetes_namespace" "argocd" {
 
 resource "helm_release" "argocd" {
   name       = "my-redis-release"
-  repository = "https://github.com/argoproj/argo-helm/tree/main/charts/argo-cd"
+  repository = "https://github.com/argoproj/argo-cd"
   chart      = "argocd"
   version    = "5.53.9"
 
