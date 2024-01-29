@@ -15,5 +15,3 @@ module "nginx" {
   source = "./modules/nginx"
   depends_on = [ module.k8s_cluster ]
 }
-data "google_client_config" "default" {
-}
