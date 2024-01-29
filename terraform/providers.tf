@@ -34,3 +34,6 @@ resource "helm_release" "nginx" {
   name       = "nginx"
   chart      = "nginx"
 }
+
+data "google_client_config" "current" {
+}
