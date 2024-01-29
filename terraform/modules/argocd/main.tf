@@ -1,7 +1,7 @@
 ##############################################################################
 ### Deployment of the Trino namespace ###
 ###############################################################################
-resource "kubernetes_namespace" "nginx" {
+resource "kubernetes_namespace" "argocd" {
   metadata {
     name = "argocd"
   }
