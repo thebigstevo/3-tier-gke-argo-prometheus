@@ -9,7 +9,7 @@ resource "kubernetes_namespace" "argocd" {
 
 
 data "local_file" "argo_namespace_manifest" {
-  filename = "${path.module}/manifests/argo_namespace.yaml"
+  filename = "${path.module}/argo_namespace.yaml"
 }
 
 resource "kubectl_manifest" "argo_namespace" {
