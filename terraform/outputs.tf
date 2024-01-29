@@ -12,6 +12,6 @@ output "k8s_cluster_endpoint" {
 }
 output "k8s_cluster_ca_certificate" {
 
-  value = module.k8s_cluster.ca_certificate
+  value = module.k8s_cluster.cluster_ca_certificate
 }
 
