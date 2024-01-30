@@ -29,6 +29,7 @@ provider "google" {
 }
 
 provider "helm" {
+   alias =                 "gcp"
   kubernetes {
     host                   = "https://${module.k8s_cluster.endpoint}"
     token                  = data.google_client_config.default.access_token
@@ -38,11 +39,11 @@ provider "helm" {
 }
 
 provider "kubectl" {
-  
+    alias                  = "gcp"
     host                   = "https://${module.k8s_cluster.endpoint}"
     token                  = data.google_client_config.default.access_token
     cluster_ca_certificate = module.k8s_cluster.cluster_ca_certificate
-    load_config_file       = false
+    load_config_file       = true
   
 }
 
