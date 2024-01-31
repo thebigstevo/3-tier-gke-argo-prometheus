@@ -8,7 +8,7 @@ resource "helm_release" "nginx" {
 
 resource "kubernetes_namespace_v1" "myname" {
   metadata {
-    name = "myname"
+    name = "nginx"
   }
  
 }
