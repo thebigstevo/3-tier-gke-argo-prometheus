@@ -46,17 +46,6 @@ provider "kubectl" {
   
 }
 
-
-
-# provider "kubectl" {
-#   alias                  = "gcp"
-#   load_config_file       = false
-#   host                   = "https://${module.gcp_triggermesh_infra.gke_cluster_host}"
-#   token                  = data.google_client_config.current.access_token
-#   cluster_ca_certificate = base64decode(module.gcp_triggermesh_infra.gke_cluster_ca_certificate)
-# }
-
-
 provider  "kubernetes" {
     host                   = "https://${module.k8s_cluster.endpoint}"
     token                  = data.google_client_config.default.access_token
