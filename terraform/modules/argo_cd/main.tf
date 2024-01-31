@@ -40,9 +40,6 @@ resource "helm_release" "argocd" {
   chart      = "argo-cd"
   depends_on = [ kubernetes_namespace.argocd ]
   namespace  = kubernetes_namespace.argocd.metadata.0.name
-  values = [
-    "${file("values.yaml")}"
-  ]
 
   set {
     name  = "service.type"
