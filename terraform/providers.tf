@@ -43,7 +43,7 @@ provider "kubectl" {
     host                   = "https://${module.k8s_cluster.endpoint}"
     token                  = data.google_client_config.default.access_token
     cluster_ca_certificate = module.k8s_cluster.cluster_ca_certificate
-    load_config_file       = true
+    load_config_file       = false
   
 }
 

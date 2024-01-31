@@ -7,7 +7,7 @@ module "k8s_cluster" {
 }
 
 module "argo_cd" {
-  source = "./modules/argocd"
+  source = "./modules/argo_cd"
   depends_on = [ module.k8s_cluster ]
 }
 
