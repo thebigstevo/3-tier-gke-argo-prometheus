@@ -58,7 +58,7 @@ provider "kubectl" {
 # }
 
 
-provider  kubernetes {
+provider  "kubernetes" {
     host                   = "https://${module.gcp_triggermesh_infra.gke_cluster_host}"
     token                  = data.google_client_config.current.access_token
     cluster_ca_certificate = base64decode(module.gcp_triggermesh_infra.gke_cluster_ca_certificate)
