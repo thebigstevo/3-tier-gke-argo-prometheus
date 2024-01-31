@@ -4,9 +4,9 @@ resource "helm_release" "nginx" {
   chart      = "nginx"
 }
 
-resource "kubernetes_namespace_v1" "myname" {
-  metadata {
-    name = "myname"
-  }
+# resource "kubernetes_namespace_v1" "myname" {
+#   metadata {
+#     name = "myname"
+#   }
  
-}
+# }
