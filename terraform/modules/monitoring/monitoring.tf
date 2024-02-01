@@ -5,10 +5,10 @@ resource "kubernetes_namespace" "monitoring" {
 }
 
 
-resource "helm_release" "prometheus-stack" {
+resource "helm_release" "prometheus_stack" {
   repository = "https://prometheus-community.github.io/helm-charts"
   chart      = "kube-prometheus-stack"
-  name       = "prometheus_grafana"
+  name       = "prometheus-grafana"
   namespace  = "monitoring"
   version    = "15.0.0"
   depends_on = [ kubernetes_namespace.monitoring ]
