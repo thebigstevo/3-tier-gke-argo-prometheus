@@ -11,7 +11,7 @@ module "argo_cd" {
   depends_on = [ module.k8s_cluster ]
 }
 
-module "nginx" {
-  source = "./modules/nginx"
-  depends_on = [ module.k8s_cluster ]
-}
+# module "nginx" {
+#   source = "./modules/nginx"
+#   depends_on = [ module.k8s_cluster ]
+# }

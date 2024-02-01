@@ -26,18 +26,11 @@ resource "kubernetes_namespace" "argocd" {
 }
 
 
-# data "local_file" "argo_namespace_manifest" {
-#   filename = "${path.module}/argo_namespace.yaml"
-# }
-
-# resource "kubectl_manifest" "argo_namespace" {
-#   yaml_body = data.local_file.argo_namespace_manifest.content
-# }
-
 resource "helm_release" "argocd" {
-  name       = "my-redis-release"
+  name       = "argocd"
   repository = "https://argoproj.github.io/argo-helm"
   chart      = "argo-cd"
+  version = "5.53.12"
   depends_on = [ kubernetes_namespace.argocd ]
   namespace  = kubernetes_namespace.argocd.metadata.0.name
 
