@@ -4,13 +4,14 @@ resource "kubernetes_namespace" "monitoring" {
   }
 }
 
-# resource "helm_release" "prometheus_stack" {
-#   repository = "https://prometheus-community.github.io/helm-charts"
-#   chart      = "kube-prometheus-stack"
-#   name       = "prometheus-grafana"
-#   namespace  = kubernetes_namespace.monitoring.metadata.0.name
+resource "helm_release" "prometheus_stack" {
+  repository = "https://prometheus-community.github.io/helm-charts"
+  chart      = "prometheus"
+  name       = "prometheus"
+  namespace  = kubernetes_namespace.monitoring.metadata.0.name
 #   version    = "15.0.0"
-#   depends_on = [ kubernetes_namespace.monitoring ]
+  depends_on = [ kubernetes_namespace.monitoring ]
+}
 # #   set {
 # #      name  = "grafana.service.type"
 # #      value = "LoadBalancer"
