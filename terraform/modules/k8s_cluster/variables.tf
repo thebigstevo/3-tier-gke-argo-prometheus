@@ -8,7 +8,7 @@ variable "zone" {
 
 
 variable "subnet_cidr" {
-  default = "10.10.0.0/24"
+  default = "10.0.2.0/24"
 }
 
 variable "machine_type" {
