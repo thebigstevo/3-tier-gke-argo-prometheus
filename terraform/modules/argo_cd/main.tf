@@ -35,7 +35,7 @@ resource "helm_release" "argocd" {
   namespace  = kubernetes_namespace.argocd.metadata.0.name
 
   set {
-    name  = "service.type"
+    name  = "server.service.type"
     value = "LoadBalancer"
   }
 }
