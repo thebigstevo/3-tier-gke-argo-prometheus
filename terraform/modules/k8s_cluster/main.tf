@@ -1,7 +1,7 @@
 #create GKE cluster
 resource "google_container_cluster" "primary" {
   name     = "my-gke-cluster"
-  location = var.region
+  location = var.zone
   network  = google_compute_network.k8s_vpc.name
   subnetwork = google_compute_subnetwork.k8s-subnet.name
 
@@ -12,7 +12,7 @@ resource "google_container_cluster" "primary" {
 #separately managed node pool
 resource "google_container_node_pool" "primary_nodes" {
   name       = "my-node-pool"
-  location   = var.region
+  location   = var.zone
   cluster    = google_container_cluster.primary.name
   node_count = 1
 
