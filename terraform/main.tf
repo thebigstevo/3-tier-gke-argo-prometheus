@@ -2,9 +2,9 @@
 #   source = "./modules/jenkins_server_tf"
 # }
 
-# module "k8s_cluster" {
-#   source = "./modules/k8s_cluster"
-# }
+module "k8s_cluster" {
+  source = "./modules/k8s_cluster"
+}
 
 # module "argo_cd" {
 #   source = "./modules/argo_cd"
