@@ -2,7 +2,7 @@
 resource "google_container_cluster" "primary" {
   name     = "my-gke-cluster"
   location = var.region
-  network  = google_compute_network.k8s_vpc.namlie
+  network  = google_compute_network.k8s_vpc.name
   subnetwork = google_compute_subnetwork.k8s-subnet.name
 
   remove_default_node_pool = true
