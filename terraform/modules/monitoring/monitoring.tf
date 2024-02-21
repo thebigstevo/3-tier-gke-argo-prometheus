@@ -9,7 +9,7 @@ resource "helm_release" "prometheus_stack" {
   chart      = "prometheus"
   name       = "prometheus"
   namespace  = kubernetes_namespace.monitoring.metadata.0.name
-  version    = "39.6.0"
+  version    = "25.13.0"
   depends_on = [ kubernetes_namespace.monitoring ]
 }
 # #   set {
