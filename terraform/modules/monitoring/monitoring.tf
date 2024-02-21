@@ -4,7 +4,7 @@ resource "kubernetes_namespace" "monitoring" {
   }
 }
 
-resource "helm_release" "prometheus_stack" {
+resource "helm_release" "prometheus" {
   repository = "https://prometheus-community.github.io/helm-charts"
   chart      = "prometheus"
   name       = "prometheus"
