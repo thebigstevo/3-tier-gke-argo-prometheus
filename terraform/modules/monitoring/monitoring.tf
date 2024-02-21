@@ -19,7 +19,7 @@ resource "kubernetes_namespace" "monitoring" {
 # }
 
 resource "kubernetes_manifest" "prometheus"{
- manifest = file("${path.module}/prometheus.yaml")
+ manifest = file("${path.module}/manifests/prometheus.yaml")
 
 
 }
