@@ -18,10 +18,8 @@ resource "kubernetes_namespace" "monitoring" {
   
 # }
 
-resource "kubernetes_manifest" "prometheus"{
- manifest = file("${path.module}/manifests/prometheus.yaml")
-
-
+resource "kubernetes_manifest" "prometheus" {
+  manifest = yamlencode(file("${path.module}/manifests/prometheus.yaml")) 
 }
 # #   set {
 # #      name  = "grafana.service.type"
