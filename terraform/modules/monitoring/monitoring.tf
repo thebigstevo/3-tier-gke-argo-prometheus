@@ -11,6 +11,10 @@ resource "helm_release" "prometheus" {
   namespace  = kubernetes_namespace.monitoring.metadata.0.name
   version    = "25.13.0"
   depends_on = [ kubernetes_namespace.monitoring ]
+    set {
+    name  = "service.type"
+    value = "LoadBalancer"
+  }
 }
 # #   set {
 # #      name  = "grafana.service.type"
