@@ -13,7 +13,7 @@ module "argo_cd" {
 
 module "monitoring" {
   source = "./modules/monitoring"
-  depends_on = [ module.k8s_cluster ]
+  depends_on = [ module.k8s_cluster ,module.argo_cd]
 }
 # module "nginx" {
 #   source = "./modules/nginx"
