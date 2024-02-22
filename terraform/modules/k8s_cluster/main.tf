@@ -1,6 +1,6 @@
 #create GKE cluster
 resource "google_container_cluster" "primary" {
-  name     =  var.cluster_name
+  name     = "my-gke-cluster"
   location = var.zone
   network  = google_compute_network.k8s_vpc.name
   subnetwork = google_compute_subnetwork.k8s-subnet.name
