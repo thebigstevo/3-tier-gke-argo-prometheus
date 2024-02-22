@@ -1,4 +1,4 @@
-variable "version" {
+variable "release_version" {
   default = "5.53.12"
 }
 
