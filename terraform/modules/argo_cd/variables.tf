@@ -15,5 +15,5 @@ variable "helm_release_name" {
 }
 
 variable "namespace_name" {
-  default = "argocd_namespace"
+  default = "argocd"
 }
