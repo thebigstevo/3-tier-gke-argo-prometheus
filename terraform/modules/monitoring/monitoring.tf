@@ -18,36 +18,3 @@ resource "helm_release" "prometheus_stack" {
   }
   
 }
-
-# resource "kubernetes_manifest" "prometheus" {
-#   manifest = yamlencode(file("${path.module}/manifests/prometheus.yaml")) 
-# }
-# #   set {
-# #      name  = "grafana.service.type"
-# #      value = "LoadBalancer"
-# #   }
-# #   set {
-# #     name  = "prometheus.prometheusSpec.serviceMonitorSelectorNilUsesHelmValues"
-# #     value = "false"
-# #   }
-# #   set {
-# #     name  = "prometheus.prometheusSpec.serviceMonitorSelector"
-# #     value = "{}"
-# #   }
-# #   set {
-# #     name  = "prometheus.service.type"
-# #     value = "LoadBalancer"
-# #   }
-  
-# }
-
-
-# resource "helm_release" "grafana" {
-#   name       = "grafana"
-#   repository = "https://grafana.github.io/helm-charts"
-#   chart      = "grafana"
-#   namespace  = kubernetes_namespace.monitoring.metadata.0.name
-# #   version    = "6.29.1"
-#   wait       = "false"
-# #   values     = ["${file("values.yaml")}"]
-# }
