@@ -14,3 +14,15 @@ variable "subnet_cidr" {
 variable "machine_type" {
   default = "e2-medium"
 }
+
+variable "disk_size_gb" {
+  default = 10
+}
+
+variable "node_count" {
+  default = 1
+}
+
+variable "cluster_name" {
+  default = "three-tier-cluster"
+}
