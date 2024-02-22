@@ -2,7 +2,7 @@
 ##############################################################################
 ### Deployment of the argo namespace ###
 ###############################################################################
-resource "kubernetes_namespace" "monitoring" {
+resource "kubernetes_namespace" "argocd" {
   metadata {
     name = "argocd"
   }
