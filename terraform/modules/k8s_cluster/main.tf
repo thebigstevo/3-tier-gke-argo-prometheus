@@ -4,7 +4,7 @@ resource "google_container_cluster" "primary" {
   location = var.zone
   network  = google_compute_network.k8s_vpc.name
   subnetwork = google_compute_subnetwork.k8s-subnet.name
-  min_master_version = "1.27"
+  min_master_version = "1.32"
 
   remove_default_node_pool = true
   initial_node_count       = 1
