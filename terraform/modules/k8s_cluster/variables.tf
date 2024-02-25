@@ -20,7 +20,7 @@ variable "disk_size_gb" {
 }
 
 variable "node_count" {
-  default = 1
+  default = 2
 }
 
 variable "cluster_name" {
