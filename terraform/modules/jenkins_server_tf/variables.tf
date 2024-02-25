@@ -1,5 +1,5 @@
 variable "project_id" {
-  default = "thePOCs"
+
 }
 
 variable "region" {

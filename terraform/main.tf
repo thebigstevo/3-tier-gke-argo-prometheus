@@ -1,5 +1,6 @@
 module "jenkins_server" {
   source = "./modules/jenkins_server_tf"
+  project_id = var.project_id
 }
 
 module "k8s_cluster" {
