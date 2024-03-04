@@ -11,7 +11,7 @@ default = "us-west4-a"
 } 
 
 variable "image" {
-default = "ubuntu-os-cloud/ubuntu-pro-2204-jammy-v20240301"
+default = "ubuntu-os-cloud/ubuntu-2204-jammy-arm64-v20240228"
 }
 
 variable ip_cidr_range{
