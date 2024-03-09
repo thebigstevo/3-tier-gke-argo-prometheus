@@ -1,0 +1,12 @@
+#create kubernetes namespace for argocd
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: argocd
+
+---
+#create kubernetes namespace for argocd
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: three-tier
