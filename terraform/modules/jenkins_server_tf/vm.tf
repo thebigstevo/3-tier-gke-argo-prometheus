@@ -16,7 +16,7 @@ resource "google_compute_instance" "jenkins_server" {
     access_config {
     }
   }
-  metadata_startup_script = "./startup.sh"
+  metadata_startup_script = "./startup.sh" 
 }
 
 #allow firewal rule of 22 to the vm
