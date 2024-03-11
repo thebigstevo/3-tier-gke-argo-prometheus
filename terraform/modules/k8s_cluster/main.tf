@@ -49,6 +49,7 @@ resource "kubernetes_persistent_volume_claim_v1" "mypvc" {
     volume_name = "${kubernetes_persistent_volume_v1.mypv.metadata.0.name}"
 
 }
+depends_on = [ kubernetes_persistent_volume_v1.mypv ]
 }
 
 #Add a persistent volume
@@ -67,7 +68,9 @@ resource "kubernetes_persistent_volume_v1" "mypv" {
         pd_name = google_compute_disk.mydisk.name
       }
     }
+    
   }
+   depends_on = [ google_compute_disk.mydisk ]
 }
 
 resource "google_compute_disk" "mydisk" {
