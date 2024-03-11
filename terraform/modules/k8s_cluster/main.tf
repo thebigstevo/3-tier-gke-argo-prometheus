@@ -8,6 +8,7 @@ resource "google_container_cluster" "primary" {
 
   remove_default_node_pool = true
   initial_node_count       = 1
+
 }       
 
 #separately managed node pool
@@ -32,3 +33,39 @@ resource "google_container_node_pool" "primary_nodes" {
     }
   }
 }    
+
+#Add a persistent Volume claim
+resource "kubernetes_persistent_volume_claim_v1" "mypvc" {
+  metadata {
+    name = "mypvcclaimname"
+  }
+   spec {
+    access_modes = ["ReadWriteMany"]
+    resources {
+      requests = {
+        storage = "5Gi"
+      }
+    }
+    volume_name = "${kubernetes_persistent_volume_v1.example.metadata.0.name}"
+
+}
+}
+
+#Add a persistent volume
+
+resource "kubernetes_persistent_volume_v1" "mypv" {
+  metadata {
+    name = "myvolumename"
+  }
+  spec {
+    capacity = {
+      storage = "10Gi"
+    }
+    access_modes = ["ReadWriteMany"]
+    persistent_volume_source {
+      gce_persistent_disk {
+        pd_name = "test-123"
+      }
+    }
+  }
+}
