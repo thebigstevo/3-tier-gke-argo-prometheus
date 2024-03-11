@@ -64,8 +64,17 @@ resource "kubernetes_persistent_volume_v1" "mypv" {
     access_modes = ["ReadWriteMany"]
     persistent_volume_source {
       gce_persistent_disk {
-        pd_name = "test-123"
+        pd_name = google_compute_disk.mydisk.name
       }
     }
   }
+}
+
+resource "google_compute_disk" "mydisk" {
+  name         = "test-123"  # Replace with desired name
+  type         = "pd-standard"  # Adjust disk type (e.g., pd-ssd)
+  zone          = var.zone  # Use the same zone as your cluster
+  size         = var.disk_size_gb  # Specify desired disk size
+
+  # Optional: Add labels or other disk configuration options
 }
