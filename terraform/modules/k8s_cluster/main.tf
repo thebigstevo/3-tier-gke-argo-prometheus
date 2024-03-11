@@ -49,6 +49,9 @@ resource "kubernetes_persistent_volume_claim_v1" "mypvc" {
     volume_name = "${kubernetes_persistent_volume_v1.mypv.metadata.0.name}"
 
 }
+  timeouts {
+    create = "5m"  # Increase timeout to 5 minutes
+  }
 depends_on = [ kubernetes_persistent_volume_v1.mypv ]
 }
 
@@ -69,6 +72,9 @@ resource "kubernetes_persistent_volume_v1" "mypv" {
       }
     }
     
+  }
+    timeouts {
+    create = "5m"  # Increase timeout to 5 minutes
   }
    depends_on = [ google_compute_disk.mydisk ]
 }
